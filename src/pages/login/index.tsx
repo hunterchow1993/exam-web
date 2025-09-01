@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { message } from 'antd'
 import { Form } from 'antd'
 import loginImage from '../../assets/login.jpg'
-import LoginFormContent from '../../components/external/LoginFormContent'
+import LoginFormContent from '@/components/external/LoginFormContent'
 
 const Login: React.FC = () => {
   const [form] = Form.useForm()

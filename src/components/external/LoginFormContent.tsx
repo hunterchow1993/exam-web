@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Input, Form, Checkbox, Divider } from 'antd'
-import { GoogleOutlined, FacebookOutlined } from '@ant-design/icons'
+import SocialGroup from '@/components/external/SocialGroup'
 
 interface LoginFormContentProps {
   form: any
@@ -32,23 +32,12 @@ const LoginFormContent: React.FC<LoginFormContentProps> = ({
       </div>
 
       {/* 第三方登录按钮 */}
-      <div className="flex space-x-3 mb-6">
-        <Button
-          onClick={onGoogleLogin}
-          className="flex-1 h-10 border border-gray-300 rounded-lg flex items-center justify-center space-x-2 hover:bg-gray-50"
-        >
-          <GoogleOutlined className="text-red-500" />
-          <span className={`text-gray-700 font-medium ${isMobile ? 'text-sm' : ''}`}>Google</span>
-        </Button>
-
-        <Button
-          onClick={onFacebookLogin}
-          className="flex-1 h-10 border border-gray-300 rounded-lg flex items-center justify-center space-x-2 hover:bg-gray-50"
-        >
-          <FacebookOutlined className="text-blue-600" />
-          <span className={`text-gray-700 font-medium ${isMobile ? 'text-sm' : ''}`}>Facebook</span>
-        </Button>
-      </div>
+      <SocialGroup
+        onGoogleLogin={onGoogleLogin}
+        onFacebookLogin={onFacebookLogin}
+        isMobile={isMobile}
+        className="mb-6"
+      />
 
       {/* 分隔符 */}
       <div className="text-center mb-6">
